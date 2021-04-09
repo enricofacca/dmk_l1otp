@@ -1,0 +1,14 @@
+*.a
+*.dat
+*sav
+*png
+*pdf
+fort*
+*.vtk
+*.o
+*.mod
+*.pyc
+*.out
+*~
+#*#
+*fnames

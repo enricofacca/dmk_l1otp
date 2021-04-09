@@ -1,0 +1,24 @@
+# DOMAIN #######################################################
+2d      ! flag_domain (2d, 3d, surface)
+poisson ! flag_equation ( poisson, saintvenant)
+# MESH #########################################################
+rect_cnst /home/fh/projects/testdirichletdmk/dir_points.dat ! flag_grid
+8 ! ndiv
+0 ! nref
+# PREBUILD EXAMPLES ############################################
+rect_cnst  3.0 ! flag_source
+rect_cnst   3.0 ! flag_sink
+no extra   ! flag_dirichlet
+no extra ! flag_neumann
+1 1e-13    ! flag_correction
+1.0 extra_path ! flag_pflux (beta )
+2.0 extra_path ! flag_pmass (gamma)
+1.0 extra_path ! flag_decay
+2.0 extra      ! flag_pode
+1.0 path/tdens0.dat ! flag_tdens0
+1.0 extra_path ! flag_kappa
+0.0 /home/fh/projects/testdirichletdmk/beta.dat ! flag_lambda
+# TIME RANGE ###################################################
+0.0 ! tzero
+5.0e2 ! tmax (stop while loop)
+

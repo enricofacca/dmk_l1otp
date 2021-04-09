@@ -1,0 +1,23 @@
+#DOMAIN ##########################################################
+2d ! flag_domain (2d 3d or surface)
+# MESH #########################################################
+rectangles /home/enrico/bbmuffe/p1_muffe/bergen/frog/mydata/grid.dat ! flag_grid
+8 ! ndiv
+1 ! nref
+# PREBUILD EXAMPLES ############################################
+1.5 extra_path ! flag_pflux (beta )
+1.0 extra_path ! flag_pmass (gamma)
+1.0 extra_path ! flag_decay
+1.0 extra ! decay0
+cnst /home/enrico/bbmuffe/p1_muffe/bergen/frog/mydata/frog_source.dat ! flag_source
+cnst /home/enrico/bbmuffe/p1_muffe/bergen/frog/mydata/frog_sink2.dat ! flag_sink
+0 ! flag_normalize
+1.0 /home/enrico/bbmuffe/p1_muffe/bergen/frog/mydata/frog_tdens0.dat ! flag_tdens0
+1.0 extra_path ! flag_kappa
+# TIME RANGE ###################################################
+0.0 ! tzero
+5.0e2 ! tmax (stop while loop)
+# OPTIONAL INPUTS #################
+no extra_path ! flag_seconddecay ( not defined with "no" option)
+no extra_path ! flag_secondpmass ( not defined with "no" option)
+

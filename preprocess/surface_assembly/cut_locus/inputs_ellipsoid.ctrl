@@ -1,0 +1,24 @@
+# DOMAIN #######################################################
+surface   ! flag_domain
+# MESH #########################################################
+use folder_grid/grid2use ! flag_grid
+16 ! ndiv
+0 ! nref
+# PREBUILD EXAMPLES ############################################
+1.0 extra_path ! flag_pflux (beta )
+1.0 extra_path ! flag_pmass (gamma)
+1.0 extra_path ! flag_decay
+1.0 extra ! decay0
+dirac /home/enrico/bbmuffe/repositories/muffe_p1p0/preprocess/surface_assembly/cut_locus/ellipsoid_dirac_source.dat ! flag_source
+uniform /hand_tree_penalty/input/sink.dat ! flag_sink
+0 ! flag_normalize
+1.0 /home/enrico/bbmuffe/p1_muffe/bergen/frog/mydata/frog_tdens0.dat ! flag_tdens0
+1.0 extra_path ! flag_kappa
+# TIME RANGE ###################################################
+0.0 ! tzero
+5.0e2 ! tmax (stop while loop)
+# OPTIONAL INPUTS #################
+no extra_path ! flag_seconddecay ( not defined with "no" option)
+no extra_path ! flag_secondpmass ( not defined with "no" option)
+no extra_path ! flag_penalty ( not defined with "no" option)
+no extra_path ! flag_penalweight ( not defined with "no" option)

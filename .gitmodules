@@ -1,0 +1,15 @@
+[submodule "external/globals"]
+	path = external/globals
+	url = https://gitlab.com/enrico_facca/globals.git
+[submodule "external/geometry"]
+	path = external/geometry
+	url = https://gitlab.com/enrico_facca/geometry.git
+[submodule "external/p1galerkin"]
+	path = external/p1galerkin
+	url = https://gitlab.com/enrico_facca/p1galerkin.git
+[submodule "external/dmk_solver"]
+	path = external/dmk_solver
+	url = https://gitlab.com/enrico_facca/dmk_solver.git
+[submodule "external/linear_algebra"]
+	path = external/linear_algebra
+	url = https://gitlab.com/enrico_facca/linear_algebra.git
